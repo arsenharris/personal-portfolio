@@ -1,0 +1,5 @@
+/* About page specific styles (imports shared landing styles) */
+@import './landingpage.css';
+
+.about-photos img{height:160px;object-fit:cover}
+

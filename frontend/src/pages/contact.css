@@ -1,0 +1,5 @@
+/* Contact page specific styles (imports shared landing styles) */
+@import './landingpage.css';
+
+form input, form textarea{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);padding:8px;border-radius:6px;color:var(--text)}
+

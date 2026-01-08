@@ -1,0 +1,11 @@
+/* Navbar specific styles */
+.lp-header{display:flex;justify-content:space-between;align-items:center;padding:12px 28px;position:fixed;left:0;right:0;top:0;background:rgba(7,16,28,0.6);backdrop-filter:blur(6px);z-index:60;border-bottom:1px solid rgba(255,255,255,0.03)}
+.brand .logo{font-weight:700;font-size:18px;color:var(--text);padding:6px 8px}
+.lp-nav{display:flex;gap:12px}
+.lp-nav .nav-link{background:transparent;border:0;color:var(--muted);padding:8px 10px;border-radius:8px;cursor:pointer;font-size:14px}
+.lp-nav .nav-link:hover, .lp-nav .nav-link:focus{color:var(--text);background:rgba(124,58,237,0.08);outline:none}
+@media (max-width:720px){
+  .lp-header{padding:10px 16px}
+  .brand .logo{font-size:16px}
+  .lp-nav .nav-link{padding:6px 8px;font-size:13px}
+}
