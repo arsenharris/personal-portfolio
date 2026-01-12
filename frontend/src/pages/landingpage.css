@@ -1,44 +1,218 @@
-.container{max-width:960px;margin:28px auto;padding:0 16px}
-:root{--bg:#07101c;--text:#e6eef8;--muted:#94a3b8;--accent:#7c3aed}
-.container{max-width:960px;margin:28px auto;padding:0 16px}
-.lp-root{min-height:100vh;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#07101c,#021018);color:#e6eef8}
-.lp-header{display:flex;justify-content:space-between;align-items:center;padding:12px 24px;position:fixed;left:0;right:0;top:0;background:linear-gradient(0deg, rgba(7,16,28,0.6), rgba(7,16,28,0.6));backdrop-filter:blur(6px);z-index:30}
-.brand{position:static;text-align:left}
-.brand .logo{font-weight:700;font-size:16px}
-.muted{color:#94a3b8}
-.lp-nav a{color:var(--muted);margin-left:12px;text-decoration:none}
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:10px;margin-bottom:16px;border:1px solid rgba(255,255,255,0.03)}
+:root{
+	--bg-start: #ffd9ee; 
+	--bg-end:   #ffc0e3;
+	--text: #0f1724; 
+	--muted: #7a6b78;
+	--accent: #ff6fa3; 
+    --ellipse-size: 50rem;
+    --ellipse-half: calc(var(--ellipse-size) / 2);
+    --side-gap: 2rem;
+	--side-block-width: 220px;
+    --tiber: #09383E;
+    --elephant: #0C383E;
+    --white: #ffffff;
+}
+html, body, #root {
+	height:100%;
+	margin:0;
+	padding:0;
+	overflow: hidden; 
+	background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+	color: var(--text);
+}
 
-/* Hero */
-.hero{position:relative;padding-top:88px}
-.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1503264116251-35a269479413?w=1600&q=60&auto=format&fit=crop');background-size:cover;background-position:center;opacity:0.12;z-index:0}
-.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:40px}
-.profile-wrap{display:flex;align-items:center;justify-content:center;gap:28px;position:relative}
-.profile-img{width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,0.06)}
-.side-label{font-weight:600;color:var(--muted);font-size:13px}
-.side-label.left{transform:translateX(-12px)}
-.side-label.right{transform:translateX(12px)}
-.hero-content{text-align:center;margin-top:18px}
-.hero h2{margin:0 0 8px}
-.hero-ctas{margin-top:12px}
-.btn{display:inline-block;padding:8px 12px;background:#7c3aed;color:#fff;border-radius:8px;text-decoration:none}
-.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:#e6eef8;margin-left:8px}
+.landing-page-root{
+	font-family: Inter, system-ui, Arial, Helvetica, sans-serif;
+}
 
-.demos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
-.demo-card{padding:12px;border-radius:8px;background:transparent}
-.demo-actions{display:flex;align-items:center;gap:8px;margin-top:8px}
-.demo-actions .link{color:#7c3aed;text-decoration:none}
-.howto ol{margin:8px 0 0 18px}
-.template pre{background:#041018;padding:10px;border-radius:6px;color:#cfe8ff}
-.small{font-size:13px}
+.hero-content .container__item { 
+	margin: 0 auto 40px; 
+}
 
-.lp-main{padding-top:84px}
+.hero-content .landing-page-container{
+	width: 100%;
+	height: 100vh; 
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: var(--tiber);
+	display:flex;
+	align-items:center;
+}
 
-/* About */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
-.about-photos img{width:100%;border-radius:8px;display:block;margin-bottom:8px}
-.skills{list-style:none;padding:0;margin:0 0 12px 0}
-.skills li{background:rgba(255,255,255,0.03);display:inline-block;padding:6px 8px;margin:6px 6px 0 0;border-radius:6px}
-.featured li{margin-bottom:6px}
+.hero-content .content__wrapper{
+	max-width:1200px;
+	width:90%;
+	height:100%;
+	margin:0 auto;
+	position:relative;
+}
 
-html{scroll-behavior:smooth}
+.hero-content .ellipses-container{width:var(--ellipse-size);height:var(--ellipse-size);border-radius:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;}
+.hero-content .greeting{position:absolute;top:11.6rem;left:13rem;right:0;margin:0 auto;text-transform:uppercase;letter-spacing:4rem;font-size:2.2rem;font-weight:400;opacity:0.5}
+.hero-content .greeting:after{content:'';width:0.3rem;height:0.3rem;border-radius:50%;display:inline-block;background-color:var(--elephant);position:relative;top:-0.65rem;left:-5.05rem}
+.hero-content .intro{font-size:1.8rem;line-height:1.3;margin-top:1.2rem;text-align:center;color:var(--tiber);max-width:48rem;margin-left:auto;margin-right:auto;opacity:0.95}
+
+.hero-content .ellipses{border-radius:50%;position:absolute;top:0;border-style:solid}
+.hero-content .ellipses__outer--thin{width:100%;height:100%;border-width:1px;border-color:rgba(9,56,62,0.1);animation:ellipsesOrbit 15s linear infinite}
+.hero-content .ellipses__outer--thin:after{content:'';background-image:url('https://s29.postimg.org/5h0r4ftkn/ellipses_dial.png');background-repeat:no-repeat;background-position:center;position:absolute;inset:0;opacity:0.15}
+.hero-content .ellipses__outer--thick{width:99.5%;height:99.5%;border-color:var(--tiber) transparent;border-width:2px;transform:rotate(-45deg);animation:ellipsesRotate 15s linear infinite}
+.hero-content .ellipses__orbit{width:2.5rem;height:2.5rem;border-width:2px;border-color:var(--tiber);top:5rem;right:6.75rem}
+.hero-content .ellipses__orbit:before{content:'';width:0.7rem;height:0.7rem;border-radius:50%;display:inline-block;background-color:var(--tiber);position:absolute;top:50%;left:0;transform:translateY(-50%)}
+
+.hero-content .scroller{width:7.5rem;display:inline-block;float:right;position:relative;top:-15%;transform:translateY(50%);overflow:hidden}
+.hero-content .page-title{font-family:'Playfair Display',serif;letter-spacing:0.5rem;display:inline-block;float:left;margin-top:1rem}
+.hero-content .timeline{width:1.5rem;height:9rem;display:inline-block;float:right}
+.hero-content .timeline__unit{width:100%;height:0.1rem;display:block;background-color:var(--elephant);margin:0 0 2rem;opacity:0.2}
+.hero-content .timeline__unit.timeline__unit--active{opacity:1}
+.hero-content .timeline__unit:after{content:'';width:70%;height:0.1rem;display:block;position:relative;float:right;background-color:var(--elephant);top:1rem}
+
+@keyframes ellipsesRotate{0%{transform:rotate(-45deg)}100%{transform:rotate(-405deg)}}
+@keyframes ellipsesOrbit{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+
+
+/* center the profile image inside the ellipses */
+.hero-content .profile-center{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	width:280px; /* doubled from 140px */
+	height:280px; /* doubled from 140px */
+	border-radius:9999px;
+	object-fit:cover;
+	border:12px solid rgba(255,255,255,0.9); /* thicker border to match scale */
+	box-shadow:0 16px 60px rgba(15,23,36,0.12);
+	z-index:12; /* keep the image above side blocks */
+	pointer-events: auto; /* ensure clicks reach the link/img */
+	cursor: pointer; /* indicate clickable profile image */
+}
+
+/* Position the side labels to sit left/right of the centered circle
+	NOTE: profile-wrap is a sibling inside .hero-inner, not a child of .hero-content,
+	 so target .hero-inner to match the DOM. */
+.hero-inner .profile-wrap{
+	position:absolute;
+	left:0;
+	right:0;
+	/* vertically center the profile-wrap on the ellipses */
+	top:50%;
+	transform:translateY(-50%);
+	height:0; /* children are absolutely positioned */
+	pointer-events:none;
+	z-index:5;
+}
+.hero-inner .profile-wrap .side-block{
+	position:absolute;
+	width:var(--side-block-width);
+	pointer-events:auto;
+	top:50%;
+	transform:translateY(-50%);
+}
+.hero-inner .profile-wrap .side-block.left{
+	/* left block: position so its right edge sits at the left edge of the ellipse (minus gap)
+	   left = center - halfEllipse - gap - blockWidth */
+	left: calc(50% - var(--ellipse-half) - var(--side-gap) - var(--side-block-width));
+	text-align:right;
+}
+.hero-inner .profile-wrap .side-block.right{
+	/* right side symmetric: center plus half circle plus gap */
+	left: calc(50% + var(--ellipse-half) + var(--side-gap));
+	text-align:left;
+	/* allow the right block to grow to fit its label while keeping a sensible minimum */
+	width: auto;
+	min-width: var(--side-block-width);
+}
+
+@media (max-width: 800px){
+	.hero-inner .profile-wrap{position:static;height:auto;top:auto}
+	.hero-inner .profile-wrap .side-block{position:static;width:auto;text-align:center;margin-top:1rem}
+	.hero-content .ellipses-container{width:32rem;height:32rem}
+	.hero-content .profile-center{width:110px;height:110px;border-width:5px}
+	/* mobile scaled profile (double of previous 110 -> 220) */
+	.hero-content .profile-center{width:220px;height:220px;border-width:10px}
+
+	/* scale down side-labels on small screens */
+	.side-label{
+		font-size:1.5rem;
+	}
+}
+
+
+
+
+
+
+.profile-wrap{display:flex;align-items:center;gap:20px;justify-content:center}
+.profile-img{width:116px;height:116px;object-fit:cover;border-radius:9999px;border:none;box-shadow:none}
+
+/* Base side-label sizing so left/right match */
+.side-label{
+	font-size:2.2rem;
+	line-height:1;
+	display:inline-block;
+}
+
+/* Simple right side label (glitch removed). Use `.neon` to enable neon effect. */
+.side-label.right{
+	position:relative;
+	font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	color:#000000;
+	font-size:2.2rem;
+	letter-spacing:0.04rem;
+	text-transform:none;
+	white-space:nowrap; /* keep the text on a single line */
+	overflow:visible;
+}
+
+/* Neon/text-effect for side labels (left & right)
+    - Add `.neon` to either `.side-label.left` or `.side-label.right` to enable.
+    - Left label uses ::after for rotating lines; we style that pseudo-element to inherit neon look.
+	 - Right label's existing glitch pseudo-elements are hidden when `.neon` is applied. */
+.side-label.neon{
+	--neon-angle: 45deg;
+	--neon-1: #ff6fa3; /* bright pink */
+	--neon-2: #7c4dff; /* violet */
+	--neon-glow: rgba(124,77,255,0.35);
+	position:relative;
+	display:inline-block;
+	color: transparent; /* gradient text via background-clip */
+	background: linear-gradient(var(--neon-angle), var(--neon-1), var(--neon-2));
+	-webkit-background-clip: text;
+	background-clip: text;
+	text-shadow:
+		0 0 6px rgba(255,111,163,0.35),
+		0 0 18px var(--neon-glow),
+		0 0 32px rgba(124,77,255,0.12);
+}
+
+/* For the left label the rotating lines live in ::after — style it to show the neon gradient */
+.side-label.left.neon::after{
+	/* keep existing content; make gradient text inside pseudo-element */
+	display:block;
+	color: transparent;
+	background: linear-gradient(var(--neon-angle), var(--neon-1), var(--neon-2));
+	-webkit-background-clip: text;
+	background-clip: text;
+	text-shadow:
+		0 0 6px rgba(255,111,163,0.35),
+		0 0 18px var(--neon-glow);
+}
+
+/* For the right label, hide the glitch pseudo-elements when neon is on and show gradient on the base element */
+.side-label.right.neon::before,
+.side-label.right.neon::after{
+	display:none !important;
+}
+
+.side-label.right.neon{
+	/* same gradient + glow */
+	--neon-angle: 45deg;
+	--neon-1: #ff6fa3;
+	--neon-2: #7c4dff;
+	color: transparent;
+	background: linear-gradient(var(--neon-angle), var(--neon-1), var(--neon-2));
+	-webkit-background-clip: text;
+	background-clip: text;
+	text-shadow: 0 0 6px rgba(255,111,163,0.35), 0 0 18px var(--neon-glow);
+}

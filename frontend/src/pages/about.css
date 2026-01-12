@@ -1,5 +1,54 @@
-/* About page specific styles (imports shared landing styles) */
-@import './landingpage.css';
+h.about-container{padding-top:2rem}
 
-.about-photos img{height:160px;object-fit:cover}
+/* Base styles taken from the supplied gallery/profile layout */
+:root { font-size: 10px; }
 
+*,:before,:after{box-sizing:border-box}
+
+body{font-family: 'Open Sans', Arial, sans-serif}
+
+.container{max-width:93.5rem;margin:0 auto;padding:0 2rem}
+
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}
+
+/* Profile */
+.profile{padding:5rem 0}
+.profile::after{content:'';display:block;clear:both}
+.profile-image{float:left;width:calc(33.333% - 1rem);display:flex;justify-content:center;align-items:center;margin-right:3rem}
+.profile-image img{border-radius:50%;width:152px;height:152px;object-fit:cover}
+.profile-user-settings,.profile-stats,.profile-bio{float:left;width:calc(66.666% - 2rem)}
+.profile-user-name{display:inline-block;font-size:3.2rem;font-weight:300}
+.profile-edit-btn{font-size:1.4rem;line-height:1.8;border:0.1rem solid #dbdbdb;border-radius:0.3rem;padding:0 2.4rem;margin-left:2rem}
+.profile-stats{margin-top:2.3rem}
+.profile-stats li{display:inline-block;font-size:1.6rem;line-height:1.5;margin-right:4rem}
+.profile-bio{font-size:1.6rem;line-height:1.5;margin-top:2.3rem}
+.profile-real-name,.profile-stat-count,.profile-edit-btn{font-weight:600}
+
+/* Gallery */
+.gallery{display:flex;flex-wrap:wrap;margin:-1rem -1rem;padding-bottom:3rem}
+.gallery-item{position:relative;flex:1 0 22rem;margin:1rem;color:#fff;cursor:pointer}
+.gallery-item-info{display:none}
+/* overlay now targets the media wrapper so it doesn't cover the caption */
+.gallery-media{position:relative}
+.gallery-media .gallery-item-info{display:none}
+.gallery-media:hover .gallery-item-info,.gallery-media:focus .gallery-item-info{display:flex;justify-content:center;align-items:center;position:absolute;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.3)}
+/* Make the image its natural height and put caption beneath */
+.gallery-image{width:100%;height:auto;object-fit:cover;display:block}
+.gallery-caption{display:block;color:var(--tiber);font-size:1.2rem;margin-top:0.5rem;padding:0 0.25rem}
+
+.loader{width:5rem;height:5rem;border:0.6rem solid #999;border-bottom-color:transparent;border-radius:50%;margin:0 auto;animation:loader 500ms linear infinite}
+
+@media screen and (max-width: 40rem){
+  .profile{display:flex;flex-wrap:wrap;padding:4rem 0}
+  .profile-image,.profile-user-settings,.profile-bio,.profile-stats{float:none;width:auto}
+  .profile-image img{width:7.7rem;height:7.7rem}
+  .profile-user-name{font-size:2.2rem}
+}
+
+@keyframes loader{to{transform:rotate(360deg)}}
+
+@supports (display:grid){
+  .profile{display:grid;grid-template-columns:1fr 2fr;grid-template-rows:repeat(3,auto);grid-column-gap:3rem;align-items:center}
+  .profile-image{grid-row:1 / -1}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(22rem,1fr));grid-gap:2rem}
+}
