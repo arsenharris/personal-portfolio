@@ -14,7 +14,7 @@ export default function About(){
 						<div className="profile-user-settings-wrapper"> 
 						<div className="profile-user-settings">
 							<h1 className="profile-user-name"><a href="/" className="profile-user-name-link">Arsen ILHAN</a></h1>
-							<a href="#contact" className="btn profile-edit-btn">Contact me</a>
+							<a href="/#contact" className="btn profile-edit-btn">Contact me</a>
 						</div>
 
 						<div className="profile-stats">
@@ -74,7 +74,7 @@ export default function About(){
 							<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=500&h=500&fit=crop" className="gallery-image" alt="sustainability" />
 							<div className="gallery-item-info">
 
-								<h2> Embodied Carbon Analysis Tool</h2>
+								<h2> Embodied Carbon Analysis</h2>
 								<div className="gallery-tech" aria-hidden>
 									<span className="tech-badge tech-django">Django</span>
 									<span className="tech-badge tech-python">Python</span>

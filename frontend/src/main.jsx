@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 
 import LandingPage from './pages/landingpage.jsx'
 import About from './pages/about.jsx'
+import Contact from './pages/contact.jsx'
 
 import './pages/landingpage.css'
 import './pages/about.css'
@@ -18,6 +19,7 @@ function Root(){
 
   const renderRoute = () => {
     switch(route){
+      case 'contact': return <Contact />
       case 'about': return <About />
       case 'landing':
       default:

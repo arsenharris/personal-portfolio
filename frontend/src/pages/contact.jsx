@@ -1,30 +1,47 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './landingpage.css'
+import './contact.css'
 
 export default function Contact(){
-  const [message, setMessage] = useState('')
-
-  const sendMail = (e) => {
-    e.preventDefault()
-    const subject = encodeURIComponent('Portfolio inquiry')
-    const body = encodeURIComponent(message)
-    window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`
-  }
-
   return (
-    <div className="container" style={{paddingTop:92}}>
-      <section className="card">
-        <h2>Contact</h2>
-        <p className="muted">Prefer email? Use the form below or send directly to <a href="mailto:you@example.com">you@example.com</a>.</p>
-        <form onSubmit={sendMail} style={{display:'grid',gap:8,marginTop:12}}>
-          <input placeholder="Subject" aria-label="subject" />
-          <textarea value={message} onChange={e=>setMessage(e.target.value)} placeholder="Message (short)" rows={6} />
-          <div style={{display:'flex',gap:8}}>
-            <button className="btn" type="submit">Email me</button>
-            <a className="btn ghost" href="mailto:you@example.com">Open Mail</a>
-          </div>
-        </form>
-      </section>
+    <div className="contact-page">
+      <div className="container">
+        <div className="row header">
+          <h1>CONTACT US&nbsp;</h1>
+          <h3>Fill out the form below to learn more!</h3>
+        </div>
+        <div className="row body">
+          <form action="https://formspree.io/f/xqabdyln" method="POST">
+            <ul>
+              <li>
+                <p className="left">
+                  <label htmlFor="first_name">first name</label>
+                  <input type="text" name="first_name" id="first_name" placeholder="John" />
+                </p>
+                <p className="pull-right">
+                  <label htmlFor="last_name">last name</label>
+                  <input type="text" name="last_name" id="last_name" placeholder="Smith" />      
+                </p>
+              </li>
+              <li>
+                <p>
+                  <label htmlFor="email">email <span className="req">*</span></label>
+                  <input type="email" name="email" id="email" placeholder="john.smith@gmail.com" required />
+                </p>
+              </li>
+              <li><div className="divider"></div></li>
+              <li>
+                <label htmlFor="comments">comments</label>
+                <textarea cols="46" rows="3" name="comments" id="comments"></textarea>
+              </li>
+              <li>
+                <input className="btn btn-submit" type="submit" value="Submit" />
+                <small>or press <strong>enter</strong></small>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </div>
     </div>
   )
 }
