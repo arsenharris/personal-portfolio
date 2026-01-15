@@ -45,7 +45,7 @@
   border-bottom: none;
 }
 
-/* Contact button styled like tech badges (gradient pill) */
+/* Instagram-style "Add friend" pill for Contact button */
 .profile-edit-btn{
   display:inline-flex;
   align-items:center;
