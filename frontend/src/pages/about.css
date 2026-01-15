@@ -1,54 +1,250 @@
-h.about-container{padding-top:2rem}
-
-/* Base styles taken from the supplied gallery/profile layout */
-:root { font-size: 10px; }
-
-*,:before,:after{box-sizing:border-box}
-
-body{font-family: 'Open Sans', Arial, sans-serif}
-
-.container{max-width:93.5rem;margin:0 auto;padding:0 2rem}
-
-.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}
-
-/* Profile */
-.profile{padding:5rem 0}
-.profile::after{content:'';display:block;clear:both}
-.profile-image{float:left;width:calc(33.333% - 1rem);display:flex;justify-content:center;align-items:center;margin-right:3rem}
-.profile-image img{border-radius:50%;width:152px;height:152px;object-fit:cover}
-.profile-user-settings,.profile-stats,.profile-bio{float:left;width:calc(66.666% - 2rem)}
-.profile-user-name{display:inline-block;font-size:3.2rem;font-weight:300}
-.profile-edit-btn{font-size:1.4rem;line-height:1.8;border:0.1rem solid #dbdbdb;border-radius:0.3rem;padding:0 2.4rem;margin-left:2rem}
-.profile-stats{margin-top:2.3rem}
-.profile-stats li{display:inline-block;font-size:1.6rem;line-height:1.5;margin-right:4rem}
-.profile-bio{font-size:1.6rem;line-height:1.5;margin-top:2.3rem}
-.profile-real-name,.profile-stat-count,.profile-edit-btn{font-weight:600}
-
-/* Gallery */
-.gallery{display:flex;flex-wrap:wrap;margin:-1rem -1rem;padding-bottom:3rem}
-.gallery-item{position:relative;flex:1 0 22rem;margin:1rem;color:#fff;cursor:pointer}
-.gallery-item-info{display:none}
-/* overlay now targets the media wrapper so it doesn't cover the caption */
-.gallery-media{position:relative}
-.gallery-media .gallery-item-info{display:none}
-.gallery-media:hover .gallery-item-info,.gallery-media:focus .gallery-item-info{display:flex;justify-content:center;align-items:center;position:absolute;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.3)}
-/* Make the image its natural height and put caption beneath */
-.gallery-image{width:100%;height:auto;object-fit:cover;display:block}
-.gallery-caption{display:block;color:var(--tiber);font-size:1.2rem;margin-top:0.5rem;padding:0 0.25rem}
-
-.loader{width:5rem;height:5rem;border:0.6rem solid #999;border-bottom-color:transparent;border-radius:50%;margin:0 auto;animation:loader 500ms linear infinite}
-
-@media screen and (max-width: 40rem){
-  .profile{display:flex;flex-wrap:wrap;padding:4rem 0}
-  .profile-image,.profile-user-settings,.profile-bio,.profile-stats{float:none;width:auto}
-  .profile-image img{width:7.7rem;height:7.7rem}
-  .profile-user-name{font-size:2.2rem}
+.container {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 ;
+}
+.profile {
+  padding: 4rem 0; 
 }
 
-@keyframes loader{to{transform:rotate(360deg)}}
-
-@supports (display:grid){
-  .profile{display:grid;grid-template-columns:1fr 2fr;grid-template-rows:repeat(3,auto);grid-column-gap:3rem;align-items:center}
-  .profile-image{grid-row:1 / -1}
-  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(22rem,1fr));grid-gap:2rem}
+.profile-image img {
+  border-radius: 50%;
+  width: clamp(120px, 18vw, 240px);
+  height: clamp(120px, 18vw, 240px);
+  object-fit: cover;
 }
+
+.profile-user-settings{
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-user-name {
+  margin: 0;
+}
+
+.profile-edit-btn {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Remove underline for the name link and make it inherit color */
+.profile-user-name-link{
+  text-decoration: none;
+  color: inherit;
+  border-bottom: none;
+}
+
+/* Instagram-style "Add friend" pill for Contact button */
+.profile-edit-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:0.4rem;
+  padding: 0.25rem 0.8rem;
+  font-size: 1.05rem;
+  line-height:1;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), #ff92b0);
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 18px rgba(255,111,163,0.12);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+.profile-edit-btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  box-shadow: 0 8px 22px rgba(255,111,163,0.14);
+}
+.profile-edit-btn:active{transform:translateY(0)}
+
+/* Facebook solid-blue variant */
+.profile-edit-btn.facebook{
+  background: linear-gradient(90deg,#1877f2,#165ec9);
+  box-shadow: 0 6px 18px rgba(24,119,242,0.12);
+}
+
+/* Ensure anchor inside h1 isn't styled like a link */
+.profile-user-name a{color:inherit}
+@media screen and (max-width: 40rem) {
+  .profile {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4rem 0;
+  }
+
+  .profile-image,
+  .profile-user-settings,
+  .profile-bio,
+
+  }
+
+  /* Profile bio styling */
+  .profile-bio{
+    margin-top: 1.25rem;
+  }
+  .profile-bio p{
+    margin: 0;
+    max-width: 62ch;
+    color: rgba(15,23,36,0.9);
+    font-size: 1rem;
+    line-height: 1.7;
+    background: rgba(255,255,255,0.015);
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(15,23,36,0.03);
+  }
+  @media (max-width: 600px){
+    .profile-bio p{font-size:0.95rem;line-height:1.6;padding:0.75rem}
+  }
+
+  /* Gallery image sizing */
+  .gallery-image{
+    width:100%;
+    height:10rem;
+    object-fit:cover;
+    border-radius:8px;
+  }
+  @media (max-width: 600px){
+    .gallery-image{height:8rem}
+  }
+  
+
+  .profile-image img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .profile-user-name {
+    font-size: 2.2rem;
+  }
+
+  .profile-user-settings-wrapper{
+    margin-left: 0;
+  }
+
+
+@keyframes loader {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@supports (display: grid) {
+  .profile {
+    display: grid;
+    /* keep two columns but size to content and center the whole block */
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile-image {
+    grid-row: 1 / -1;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-gap: 1.25rem;
+  }
+}
+
+.gallery-tech{display:flex;flex-wrap:wrap;gap:0.4rem 0.5rem;margin-top:0.5rem}
+.tech-badge{background: rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:12px;color:var(--text);border:1px solid rgba(15,23,36,0.03)}
+
+/* Tech-specific badge styles */
+.tech-badge{display:inline-flex;align-items:center;gap:0.4rem;padding:6px 10px;font-weight:600}
+.tech-badge::before{display:inline-block}
+.tech-django{  display:inline-flex;
+  align-items:center;
+  gap:0.4rem;
+  padding: 0.25rem 0.8rem;
+  font-size: 1.05rem;
+  line-height:1;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), #ff92b0);
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 18px rgba(255,111,163,0.12);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;}
+.tech-django::before{content:"🏗️"}
+.tech-python{  display:inline-flex;
+  align-items:center;
+  gap:0.4rem;
+  padding: 0.25rem 0.8rem;
+  font-size: 1.05rem;
+  line-height:1;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), #ff92b0);
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 18px rgba(255,111,163,0.12);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;}
+.tech-python::before{content:"🐍"}
+.tech-js{background:var(--accent);color:#fff;border-color:rgba(0,0,0,0.04)}
+.tech-js::before{content:"✨"}
+.tech-react{  display:inline-flex;
+  align-items:center;
+  gap:0.4rem;
+  padding: 0.25rem 0.8rem;
+  font-size: 1.05rem;
+  line-height:1;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), #ff92b0);
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 18px rgba(255,111,163,0.12);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;}
+.tech-react::before{content:"⚛️"}
+.tech-aws{  display:inline-flex;
+  align-items:center;
+  gap:0.4rem;
+  padding: 0.25rem 0.8rem;
+  font-size: 1.05rem;
+  line-height:1;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), #ff92b0);
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 18px rgba(255,111,163,0.12);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;}
+.tech-aws::before{content:"☁️"}
+
+.gallery-image{
+  width:100%;
+  aspect-ratio: 1 / 1;
+  object-fit:cover;
+  border-radius:8px;
+}
+@media (max-width: 600px){
+  .gallery-image{aspect-ratio:1/1}
+}
+
+.profile-user-settings-wrapper{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:stretch;
+  margin-left: -15.5rem;
+}
+
+/* Profile summary badges (different from bio) */
+.profile-summary{display:flex;gap:0.75rem;align-items:center;margin:0;font-size:0.95rem;color:var(--muted);}
+.summary-item{display:inline-flex;align-items:center;gap:0.5rem;padding:0.25rem 0.6rem;border-radius:999px;background:rgba(15,23,36,0.03);border:1px solid rgba(15,23,36,0.04);}
+.summary-icon{font-size:1rem;line-height:1}
+

@@ -1,6 +1,0 @@
-/* Projects page specific styles (imports shared landing styles) */
-@import './landingpage.css';
-
-article.card h4{margin:0 0 6px}
-.small{font-size:13px}
-
