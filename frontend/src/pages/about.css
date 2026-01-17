@@ -239,30 +239,51 @@
     flex-direction: column;
     align-items: center;
     gap: 0.35rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+    background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0));
   }
-
-  .gallery-item-info{ bottom: 2.8rem; }
+  /* place the title at the top of the overlay and badges below */
+  .gallery-item-info{ top: 0.6rem; bottom: auto; padding-top: 0.6rem; z-index: 3; }
   .gallery-item-info h2 {
     margin: 0;
-    font-size: 1.25rem;
-    font-weight: 700;
-    line-height: 1.1;
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.05;
     text-transform: none;
     letter-spacing: 0;
     color: #fff;
-    text-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    text-shadow: 0 8px 28px rgba(0,0,0,0.6);
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25));
   }
-  .gallery-tech{ bottom: 0.4rem; justify-content:center }
+  .gallery-tech{ bottom: 0.6rem; justify-content:center; z-index: 2 }
 
   .gallery-item:hover .gallery-image{ transform: translateY(-4%) scale(1.04); }
-  .gallery-item:hover .gallery-item-info,
-  .gallery-item:hover .gallery-tech{ transform: translateY(0); opacity: 1; }
+  /* title appears first, badges follow with a short delay */
+  .gallery-item:hover .gallery-item-info{ transform: translateY(0); opacity: 1; transition-delay: 0s; }
+  .gallery-item:hover .gallery-tech{ transform: translateY(0); opacity: 1; transition-delay: 0.12s; }
 }
 .tech-badge{background: rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:12px;color:var(--text);border:1px solid rgba(15,23,36,0.03)}
 
-/* Tech-specific badge styles */
-.tech-badge{display:inline-flex;align-items:center;gap:0.4rem;padding:6px 10px;font-weight:600}
+/* Shared pill style used by gallery title and tech badges */
+.pill-style,
+.gallery-item-info h2,
+.tech-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:0.4rem;
+  padding:0.25rem 0.8rem;
+  font-size:1.05rem;
+  line-height:1;
+  border-radius:999px;
+  background: linear-gradient(90deg, var(--accent), #ff92b0);
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 18px rgba(255,111,163,0.12);
+  font-weight:700;
+}
+.pill-style::before,
 .tech-badge::before{display:inline-block}
 .tech-django{  display:inline-flex;
   align-items:center;

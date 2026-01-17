@@ -96,4 +96,20 @@ body, .contact-section {font-family: 'Lato', sans-serif}
 	.form-column{padding:1rem}
 }
 
+/* Reusable pill style (matches gallery badges and titles) */
+.pill-style{
+	display:inline-flex;
+	align-items:center;
+	gap:0.4rem;
+	padding:0.25rem 0.8rem;
+	font-size:1.05rem;
+	line-height:1;
+	border-radius:999px;
+	background: linear-gradient(90deg, var(--accent), var(--accent-2));
+	color: #fff;
+	border: none;
+	box-shadow: 0 6px 18px rgba(255,111,163,0.12);
+	font-weight:700;
+}
+
 
