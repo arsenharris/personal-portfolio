@@ -5,23 +5,22 @@ import './contact.css'
 export default function Contact(){
   return (
     <section id="contact" className="contact-section">
+      <h3 className="map-title pill-style">Contact Me</h3>
       <div className="contact-container">
         <div className="map-column">
           <div className="map-wrap">
-            <iframe title="map" className="map-iframe" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=London+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameBorder="0" aria-hidden="false" tabIndex="0"></iframe>
+            <iframe title="map" className="map-iframe" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Australia&amp;ie=UTF8&amp;t=&amp;z=4&amp;iwloc=B&amp;output=embed" frameBorder="0" aria-hidden="false" tabIndex="0"></iframe>
           </div>
           <div className="contact-info">
             <div className="info-block">
               <h3>ADDRESS</h3>
-              <p>123 Main Street, London, UK</p>
+              <p>Milky Way Galaxy, please find me</p>
             </div>
             <div className="info-block">
               <h3>EMAIL</h3>
-              <a href="mailto:your@email.com">your@email.com</a>
+              <a href="mailto:arsenilhan@outlook.es">arsenilhan@outlook.es</a>
               <h3>LINKEDIN</h3>
-              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a>
-              <h3>PHONE</h3>
-              <a href="tel:123-456-7890">123-456-7890</a>
+              <a href="https://www.linkedin.com/in/arsenilhan/" target="_blank" rel="noopener noreferrer">linkedin.com/in/arsenilhan</a>
             </div>
           </div>
         </div>

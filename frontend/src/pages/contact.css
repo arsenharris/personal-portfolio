@@ -13,7 +13,8 @@
 body, .contact-section {font-family: 'Lato', sans-serif}
 
 .contact-section{
-	background: var(--white);
+	/* match landing page pink gradient */
+	background: linear-gradient(135deg, var(--bg-start, #ffd9ee), var(--bg-end, #ffc0e3));
 	padding: 3.5rem 1rem;
 	min-height: 100vh;
 }
@@ -110,6 +111,14 @@ body, .contact-section {font-family: 'Lato', sans-serif}
 	border: none;
 	box-shadow: 0 6px 18px rgba(255,111,163,0.12);
 	font-weight:700;
+}
+
+/* align the `Contact Me` pill with the contact container left edge */
+.map-title{
+  display:block;
+  max-width:1100px;
+  margin: 0  auto 1rem;
+  text-align: left;
 }
 
 
