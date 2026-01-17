@@ -230,6 +230,16 @@
   }
 
   .gallery-item-info{ bottom: 2.8rem; }
+  .gallery-item-info h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #fff;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  }
   .gallery-tech{ bottom: 0.4rem; justify-content:center }
 
   .gallery-item:hover .gallery-image{ transform: translateY(-4%) scale(1.04); }

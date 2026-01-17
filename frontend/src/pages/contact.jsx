@@ -4,44 +4,48 @@ import './contact.css'
 
 export default function Contact(){
   return (
-    <div className="contact-page">
-      <div className="container">
-        <div className="row header">
-          <h1>CONTACT US&nbsp;</h1>
-          <h3>Fill out the form below to learn more!</h3>
+    <section id="contact" className="contact-section">
+      <div className="contact-container">
+        <div className="map-column">
+          <div className="map-wrap">
+            <iframe title="map" className="map-iframe" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=London+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameBorder="0" aria-hidden="false" tabIndex="0"></iframe>
+          </div>
+          <div className="contact-info">
+            <div className="info-block">
+              <h3>ADDRESS</h3>
+              <p>123 Main Street, London, UK</p>
+            </div>
+            <div className="info-block">
+              <h3>EMAIL</h3>
+              <a href="mailto:your@email.com">your@email.com</a>
+              <h3>LINKEDIN</h3>
+              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a>
+              <h3>PHONE</h3>
+              <a href="tel:123-456-7890">123-456-7890</a>
+            </div>
+          </div>
         </div>
-        <div className="row body">
-          <form action="https://formspree.io/f/xqabdyln" method="POST">
-            <ul>
-              <li>
-                <p className="left">
-                  <label htmlFor="first_name">first name</label>
-                  <input type="text" name="first_name" id="first_name" placeholder="John" />
-                </p>
-                <p className="pull-right">
-                  <label htmlFor="last_name">last name</label>
-                  <input type="text" name="last_name" id="last_name" placeholder="Smith" />      
-                </p>
-              </li>
-              <li>
-                <p>
-                  <label htmlFor="email">email <span className="req">*</span></label>
-                  <input type="email" name="email" id="email" placeholder="john.smith@gmail.com" required />
-                </p>
-              </li>
-              <li><div className="divider"></div></li>
-              <li>
-                <label htmlFor="comments">comments</label>
-                <textarea cols="46" rows="3" name="comments" id="comments"></textarea>
-              </li>
-              <li>
-                <input className="btn btn-submit" type="submit" value="Submit" />
-                <small>or press <strong>enter</strong></small>
-              </li>
-            </ul>
+
+        <div className="form-column">
+          <h2 className="form-title">Get in Touch</h2>
+          <p className="form-sub">Have questions, suggestions, or just want to say hello? We'd love to hear from you! Drop us a message and we'll get back to you as soon as possible.</p>
+          <form action="https://formspree.io/f/xqabdyln" method="POST" className="contact-form">
+            <label htmlFor="name">Name</label>
+            <input id="name" name="name" type="text" />
+
+            <label htmlFor="email">Email</label>
+            <input id="email" name="email" type="email" />
+
+            <label htmlFor="message">Message</label>
+            <textarea id="message" name="message" rows="6"></textarea>
+
+            <div className="form-actions">
+              <button type="submit" className="btn submit-btn">Submit</button>
+              <a className="btn back-btn" href="/#landing">Back to Landing</a>
+            </div>
           </form>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
