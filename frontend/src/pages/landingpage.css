@@ -1,6 +1,6 @@
 :root{
-	--bg-start: #ffd9ee; 
-	--bg-end:   #ffc0e3;
+	--bg-start: #ffffff; 
+	--bg-end:   #ffffff;
 	--text: #0f1724; 
 	--muted: #7a6b78;
 	--accent: #ff6fa3; 
@@ -19,7 +19,7 @@ html, body, #root {
 	margin:0;
 	padding:0;
 	overflow: hidden; 
-	background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+	background: var(--white);
 	color: var(--text);
 }
 
