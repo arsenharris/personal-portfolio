@@ -35,7 +35,7 @@ export default function About(){
 			},
 			{ 
 				title: 'Yarning Circle',
-				href: 'https://yarning-circle.netlify.app',
+				href: 'https://yarningcircles.netlify.app',
 				img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&h=500&fit=crop',
 				imgLarge: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&h=1200&fit=crop',
 				desc: 'Peer learning platform',
@@ -57,7 +57,7 @@ export default function About(){
 				proud: `Designing a calm, readable interface for long-form discussions\nStructuring Django models for discussions and replies\nBuilding a platform that prioritises learning over noise`,
 				improvements: `Upvoting and reputation system\nContent moderation tools\nReal-time updates with WebSockets\nPrivate or invite-only circles`,
 			},
-			{ title: 'Embodied Carbon Analysis', href: '#', img: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=500&h=500&fit=crop', imgLarge: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=1200&h=1200&fit=crop', desc: 'Sustainability & data analysis tool',
+			{ title: 'Embodied Carbon Analysis', href: 'http://embodied.lyciadesign.com/', img: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=500&h=500&fit=crop', imgLarge: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=1200&h=1200&fit=crop', desc: 'Sustainability & data analysis tool',
 				what: `A web-based tool that helps analyse embodied carbon in building materials by calculating carbon impact across different material choices. The project combines engineering knowledge with software development to support more sustainable design decisions.`,
 				why: `To bridge my background in Mechanical & Building Services Engineering with software development\nTo explore how data-driven tools can support sustainable design\nTo experiment with turning engineering calculations into usable web applications`,
 				keyFeatures: [
@@ -179,7 +179,7 @@ export default function About(){
 					<i class="fa fa-search search-icon"></i>
 					</div>
 					<div class="navbar-actions">
-					<a class="btn-login" href="/#contact">Contact me</a>
+					<a class="btn-login" href="#contact">Contact me</a>
 					</div>
 
 				</div>
